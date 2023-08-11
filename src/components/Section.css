@@ -1,0 +1,343 @@
+/** @format */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font: inherit;
+  font-weight: normal;
+  line-height: inherit;
+}
+
+html {
+  font-size: 0.9rem;
+  width: 100%;
+  line-height: 1.15;
+  position: relative;
+  font-family: "SF UI Text", "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+}
+
+header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1000;
+  font-size: 1rem;
+  height: 11.12em;
+  max-height: 12rem;
+  background: transparent;
+}
+header .navbar .nav-logo {
+  display: flex;
+  z-index: 1000;
+  font-size: 2rem;
+  align-items: center;
+  fill: #ccf381;
+  color: #ccf381;
+  text-decoration: none;
+}
+header .navbar .sidebarIcon svg {
+  fill: #4831d4;
+  position: relative;
+  z-index: 1000;
+}
+header .navbar .sidebar {
+  top: 1.39rem;
+  right: 3.41em;
+  width: 22.223em;
+  font-size: 1.1em;
+  position: absolute;
+  z-index: 998;
+  padding: 3.473em;
+  background-color: #ffffff;
+}
+header .navbar .sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+header .navbar .sidebar ul li {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+header .navbar .sidebar ul li a {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+}
+header .navbar .sidebar ul li a span {
+  margin-right: 1rem;
+}
+
+section.one {
+  flex-direction: column;
+  padding-bottom: 4.17rem;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+section.one .boxes {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.one .boxes article {
+  display: block;
+  text-align: left;
+  position: relative;
+}
+section.one .boxes article .box.one {
+  position: relative;
+}
+section.one .boxes article .box.one .heading {
+  color: #ccf381;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+section.one .boxes article .box.one .heading span {
+  color: #fff;
+}
+section.one .boxes article .box.one .bolid {
+  color: #fff;
+  line-height: 1.6;
+}
+section.one .boxes .box.two {
+  margin: 0;
+  z-index: 1;
+  width: 23.334em;
+  height: 24.67em;
+  position: relative;
+  border: 0.115rem solid #fff;
+}
+section.one .boxes .box.two .figure {
+  width: inherit;
+  display: block;
+  height: inherit;
+  margin-top: -2.435em;
+  background-color: #fff;
+  background-size: cover;
+  background-position-x: center;
+  margin-left: -2.2em;
+  background-image: url(../../public/images/NuraddinovA.png);
+}
+section.one .text.bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.one .text.bottom ul {
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  color: #ccf381;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+section.one .text.bottom ul li {
+  width: calc(50% - 1.731em);
+}
+
+section.two {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.two h1 {
+  color: #4831d4;
+  font-size: 4em;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+section.two p {
+  line-height: 1.6;
+  color: #3d155f;
+}
+section.two .one_1 {
+  padding-bottom: 12rem;
+}
+section.two .two_2 {
+  padding-top: 12rem;
+}
+
+section.three .boxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.three .boxes article h1 {
+  color: #ccf381;
+  margin: 0;
+  font-size: 4em;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+section.three .boxes article p {
+  color: #fff;
+  line-height: 1.6;
+}
+
+@media (max-width: 580px) {
+  section.one {
+    background: linear-gradient(180deg, #4831d4 80%, #ccf381 20%);
+  }
+  section.one .boxes {
+    padding: 0 15vw;
+    margin-top: 17.12em;
+  }
+  section.one .boxes article .box.one .heading {
+    font-size: 5em;
+  }
+  section.one .text.bottom {
+    padding: 0 15vw;
+  }
+  section.two {
+    padding: 0 15vw;
+    margin-top: 17.12em;
+  }
+}
+@media (min-width: 581px) and (max-width: 700px) {
+  section.one .boxes {
+    padding: 0 7rem;
+  }
+  section.two {
+    padding: 0 7rem;
+  }
+}
+@media (min-width: 581px) {
+  section.one {
+    background: linear-gradient(90deg, #4831d4 67%, #ccf381 33%);
+  }
+  section.one .boxes {
+    margin-top: 13.12em;
+  }
+  section.one .boxes article .box.one .heading {
+    font-size: 4.4rem;
+  }
+  section.one .boxes article .box.one .bolid {
+    font-size: 1.3em;
+  }
+  section.one .text.bottom {
+    padding: 0 7rem;
+  }
+  section.one .text.bottom ul {
+    width: 65%;
+  }
+  section.two {
+    margin-top: 13.12em;
+  }
+}
+@media (max-width: 700px) {
+  html {
+    font-size: 0.562rem;
+  }
+  header .navbar {
+    position: absolute;
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+  header .navbar .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    font-size: 2rem;
+  }
+  section {
+    font-size: 0.95em;
+  }
+  section.one .boxes article .box.one .bolid {
+    max-width: 20em;
+  }
+  section.one .boxes article .box.two {
+    margin-right: 0;
+  }
+  section.one .text.bottom {
+    font-size: 1.2em;
+  }
+  section.two {
+    display: block;
+  }
+  section.two .one_1 {
+    padding: 0;
+  }
+  section.two .two_2 {
+    padding: 0;
+  }
+  section.two p {
+    font-size: 1.3em;
+  }
+}
+@media (min-width: 701px) and (max-width: 1600px) {
+  html {
+    font-size: 1vw;
+  }
+  .boxes {
+    max-width: 1500px;
+  }
+  .section.two {
+    max-width: 1500px;
+  }
+  .text.bottom {
+    max-width: 1500px;
+  }
+}
+@media (min-width: 701px) {
+  header .navbar {
+    padding-left: 6em;
+    padding-right: 6em;
+    position: fixed;
+  }
+  section.one .boxes {
+    padding: 0 10rem;
+  }
+  section.one .boxes article {
+    margin-top: 3.5em;
+  }
+  section.one .boxes article .box.one .heading {
+    max-width: 30vw;
+  }
+  section.one .boxes article .box.one .bolid {
+    max-width: 701px;
+    width: 32vw;
+  }
+  section.one .boxes .box.two {
+    margin-right: 10em;
+  }
+  section.one .text.bottom {
+    padding: 0 10rem;
+    padding-right: 6em;
+  }
+  section.one .text.bottom ul {
+    width: 41%;
+    font-size: 0.965em;
+  }
+  section.two {
+    padding: 0 10rem;
+  }
+  section.two p {
+    max-width: 701px;
+    font-size: 1.07em;
+    width: 32vw;
+  }
+}/*# sourceMappingURL=Section.css.map */
