@@ -621,12 +621,18 @@ section.footer {
   }
   section.three {
     padding: 10rem 0;
-    background: linear-gradient(-10deg, #b5e2e5 60%, #4831d4 40%);
+    background-color: #b5e2e5;
+    
+    // background: linear-gradient(10deg, #b5e2e5 60%, #4831d4 40%);
     .boxes {
       display: block;
       article {
+        h1{
+          color: #4831d4;
+        }
         p {
           font-size: 1.3em;
+          color: #4831d4;
         }
       }
       // figure {

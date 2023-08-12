@@ -18,7 +18,7 @@ export const SidebarData = [
     className: "nav-text",
   },
   {
-    title: "Shelf",
+    title: "My Shelf",
     path: "/shelf",
     icon: (
       <svg

@@ -1,7 +1,33 @@
 /** @format */
-
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import "./Section.scss";
 const Section = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault(); // prevents the page from reloading when you hit “Send”
+
+    emailjs
+      .sendForm(
+        "service_gtz60lv",
+        "template_4e4ivej",
+        form.current,
+        "tVFqMhs2LkBzEgVC1"
+      )
+      .then(
+        (result) => {
+          alert(result);
+          console.log("jonatildi");
+          // show the user a success message
+        },
+        (error) => {
+          alert(error);
+          console.log("error");
+          // show the user an error
+        }
+      );
+  };
   return (
     <div>
       <section className="one">
@@ -23,13 +49,10 @@ const Section = () => {
         </div>
         <div className="text bottom">
           <ul>
+            <li>Experienced in many advanced javascript libraries.</li>
             <li>
-              Highly skilled at progressive enhancement, design systems & UI
-              Engineering.
-            </li>
-            <li>
-              Proven experience building successful products for clients across
-              several countries.
+              I worked at Sigmasoftware for 3 months. I don't have any official
+              experience yet.
             </li>
           </ul>
         </div>
@@ -58,32 +81,13 @@ const Section = () => {
       <section className="three">
         <div className="boxes">
           <article>
-            <h1>Over the years,</h1>
+            <h1>In the coming years</h1>
             <p>
-              I've built products for companies and businesses around the globe
-              ranging from marketing websites to complex solutions and
-              enterprise apps with focus on fast, elegant and accessible user
-              experiences.
-            </p>
-            <p>
-              Currently, I work at Shopify as a Senior Frontend Engineer
-              crafting thoughtful and inclusive experiences that adhere to web
-              standards for over 3 million merchants across the world.
-            </p>
-            <p>
-              Before now, I was Principal Frontend Engineer at hellotax, where I
-              worked on a suite of tools and services tailored towards automated
-              VAT compliance for multi-channel sellers in Europe.
-            </p>
-            <p>
-              Prior to hellotax, I was Senior frontend engineering consultant
-              with Pixel2HTML, building JavaScript applications and interfaces
-              for orgs and individuals.
-            </p>
-            <p>
-              I once also led the frontend team at Conectar, an e-learning
-              startup through building multiple React applications into a single
-              robust learning platform.
+              Insha'Allah, I will soon start working in Mohirdev.I will start
+              learning English as soon as I have time after I get a job. I gain
+              experience doing many big projects at work. After learning
+              English. I will submit a job application to Epam. Inshallah, I
+              will get a job at Epam and gain experience in many projects.
             </p>
           </article>
           <figure>
@@ -144,25 +148,38 @@ const Section = () => {
             Got a question or proposal, or just want <br /> to say hello? Go
             ahead.
           </p>
-          <form>
+          <form ref={form}>
             <span>
               <div className="name">
                 <label id="label">Your Name</label>
                 <br />
-                <input id="name" type="text" placeholder="Enter your name" />
+                <input
+                  name="user_name"
+                  id="name"
+                  type="text"
+                  placeholder="Enter your name"
+                />
               </div>
               <div className="email">
                 <label id="label">Your Email</label>
                 <br />
-                <input type="text" placeholder="Enter your email address" />
+                <input
+                  name="user_email"
+                  type="email"
+                  placeholder="Enter your email address"
+                />
               </div>
             </span>
             <div className="message">
               <label id="label">Your message</label>
               <br />
-              <input type="text" placeholder="Information about yourself" />
+              <input
+                name="message"
+                type="text"
+                placeholder="Information about yourself"
+              />
             </div>
-            <button type="button">
+            <button type="button" onClick={sendEmail}>
               Shoot
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -176,7 +193,6 @@ const Section = () => {
           </form>
         </div>
       </section>
-      
     </div>
   );
 };
