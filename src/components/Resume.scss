@@ -1,0 +1,23 @@
+.boxmax {
+  display: flex;
+  justify-content: center;
+  padding: 10rem 0;
+  background-color: #f5f4fc;
+  img {
+    width: 50%;
+  }
+}
+@media (max-width: 580px) {
+  .boxmax {
+    width: 100%;
+    height: 100vh;
+    padding:0;
+    img {
+      height: auto;
+      width: 90%;
+      object-fit: contain;
+      //   background-size: cover;
+      //   background-size: contain;
+    }
+  }
+}

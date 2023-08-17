@@ -1,0 +1,66 @@
+.boxMax {
+  display: flex;
+  // justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  padding: 10rem 10rem;
+  .box {
+    // align-items: center;
+    margin: 3em 2em;
+    // margin-left: 0;
+    text-align: center;
+    border: 1px solid #f5f4fc;
+    border-radius: 10px;
+    background-color: #f5f4fc;
+    padding: 3rem 0;
+    width: 15rem;
+    // color: red;
+    .svg {
+      margin: 0 auto;
+      height: 7rem;
+      width: 7rem;
+      border: 1px solid #ccf381;
+      border-radius: 50%;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      background-color: #ccf381;
+    }
+    .title {
+      a {
+        text-decoration: none;
+        color: currentColor;
+      }
+    }
+  }
+  #one {
+    color: #dd4b25;
+  }
+  #two {
+    color: #254bdd;
+  }
+  #three {
+    color: #cf649b;
+  }
+  #four {
+    color: #712cf9;
+  }
+  #five {
+    color: #dd9c24;
+  }
+  #six {
+    color: #61dafb;
+  }
+  #seven {
+    color: #e84e31;
+  }
+  #eight {
+    color: #1a1e22;
+  }
+}
+@media (max-width: 580px) {
+  .boxMax {
+    padding: 5rem 15vw;
+  }
+}

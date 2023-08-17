@@ -2,12 +2,11 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "./Section.scss";
+// import { useEffect } from "react";
 const Section = () => {
   const form = useRef();
-
   const sendEmail = (e) => {
-    e.preventDefault(); // prevents the page from reloading when you hit “Send”
-
+    e.preventDefault();
     emailjs
       .sendForm(
         "service_gtz60lv",
@@ -17,14 +16,12 @@ const Section = () => {
       )
       .then(
         (result) => {
-          alert(result);
-          console.log("jonatildi");
-          // show the user a success message
+          alert("Habar yuborildi!");
+          console.log(result);
         },
         (error) => {
-          alert(error);
-          console.log("error");
-          // show the user an error
+          alert("Xato chiqdi bizga bog'laning");
+          console.log(error);
         }
       );
   };
@@ -41,20 +38,18 @@ const Section = () => {
                 I like to craft solid and scalable frontend products with great
                 user experiences.
               </p>
+              <ul>
+                <li>Experienced in many advanced javascript libraries.</li>
+                <li>
+                  I worked at Sigmasoftware for 3 months. I don't have any
+                  official experience yet.
+                </li>
+              </ul>
             </div>
           </article>
           <figure className="box two">
             <div className="figure"></div>
           </figure>
-        </div>
-        <div className="text bottom">
-          <ul>
-            <li>Experienced in many advanced javascript libraries.</li>
-            <li>
-              I worked at Sigmasoftware for 3 months. I don't have any official
-              experience yet.
-            </li>
-          </ul>
         </div>
       </section>
       <section className="two">
@@ -100,13 +95,15 @@ const Section = () => {
           <div className="box one">
             <article>
               <h1>
-                I build & <br /> design stuff
+                I build &
+                <br />
+                site design
               </h1>
               <p className="p">
                 Open source <br /> projects, web apps <br /> and experimentals.
               </p>
             </article>
-            <a style={{ alignItems: "center", display: "flex" }}>
+            <a>
               <p>SEE MY WORK</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +124,7 @@ const Section = () => {
                 About design, <br /> frontend dev, <br /> learning and life.
               </p>
             </article>
-            <a style={{ alignItems: "center", display: "flex" }}>
+            <a>
               <p>READ MY ARTICLES</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -148,38 +145,63 @@ const Section = () => {
             Got a question or proposal, or just want <br /> to say hello? Go
             ahead.
           </p>
-          <form ref={form}>
+          <form ref={form} onSubmit={sendEmail}>
             <span>
               <div className="name">
-                <label id="label">Your Name</label>
+                <label id="label">
+                  Your Name
+                  <input
+                    required
+                    onInvalid={(e) =>
+                      e.target.setCustomValidity("Iltimos ismingizni kiriting!")
+                    }
+                    onInput={(e) => e.target.setCustomValidity("")}
+                    title="Ismingizni kiriting"
+                    name="user_name"
+                    type="text"
+                    placeholder="Enter your name"
+                  />
+                </label>
                 <br />
-                <input
-                  name="user_name"
-                  id="name"
-                  type="text"
-                  placeholder="Enter your name"
-                />
               </div>
               <div className="email">
-                <label id="label">Your Email</label>
-                <br />
-                <input
-                  name="user_email"
-                  type="email"
-                  placeholder="Enter your email address"
-                />
+                <label id="label">
+                  Your Email
+                  <br />
+                  <input
+                    required
+                    onInvalid={(e) =>
+                      e.target.setCustomValidity(
+                        "Iltimos emailingizni to'g'ri kiriting! biz sizga javob yozish uchun muhim!"
+                      )
+                    }
+                    onInput={(e) => e.target.setCustomValidity("")}
+                    name="user_email"
+                    type="email"
+                    placeholder="Enter your email address"
+                  />
+                </label>
               </div>
             </span>
             <div className="message">
-              <label id="label">Your message</label>
-              <br />
-              <input
-                name="message"
-                type="text"
-                placeholder="Information about yourself"
-              />
+              <label id="label">
+                Your message
+                <br />
+                <input
+                  required
+                  onInvalid={(e) =>
+                    e.target.setCustomValidity(
+                      "Iltimos savolingizni yozing! biz siz bilan bog'lanamiz!"
+                    )
+                  }
+                  onInput={(e) => e.target.setCustomValidity("")}
+                  name="message"
+                  type="text"
+                  placeholder="Information about yourself"
+                />
+              </label>
             </div>
-            <button type="button" onClick={sendEmail}>
+            <button type="submit" onClick={() => sendEmail}>
               Shoot
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -190,6 +212,19 @@ const Section = () => {
                 <path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
               </svg>
             </button>
+            {/* {car.map((item, index) => (
+              <div style={{ display: "flex" }} key={index}>
+                <p>
+                  Brand:<b>{item.name}</b>
+                </p>
+                <p>
+                  Price:<b>{item.email}</b>
+                </p>
+                <p>
+                  Color:<b>{item.message}</b>
+                </p>
+              </div>
+            ))} */}
           </form>
         </div>
       </section>

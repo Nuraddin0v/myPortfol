@@ -1,9 +1,9 @@
 import React from "react";
-import "./MyShelf.scss";
-const MyShelf = () => {
+import "./MyWork.scss";
+const MyWork = () => {
   return (
     <div>
-      <div id="boxes" >
+      <div id="boxes">
         <h1>/Shelf</h1>
         <p>
           Assalomu Alaykum everyone. I didn't get a job in programming. I am
@@ -15,4 +15,4 @@ const MyShelf = () => {
   );
 };
 
-export default MyShelf;
+export default MyWork;

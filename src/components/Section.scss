@@ -10,6 +10,7 @@ body {
   font: inherit;
   font-weight: normal;
   line-height: inherit;
+  // overflow: unset;
   // -webkit-font-smoothing: inherit;
   // -moz-osx-font-smoothing: inherit;
 }
@@ -77,6 +78,7 @@ header {
     }
   }
 }
+
 section.one {
   flex-direction: column;
   padding-bottom: 4.17rem;
@@ -96,6 +98,17 @@ section.one {
       position: relative;
       .box.one {
         position: relative;
+        ul {
+          width: 80%;
+          list-style: none;
+          padding: 0;
+          color: #ccf381;
+          display: flex;
+          justify-content: space-between;
+          li {
+            width: 45%;
+          }
+        }
         .heading {
           color: #ccf381;
           font-weight: 900;
@@ -119,7 +132,7 @@ section.one {
       width: 23.334em;
       height: 24.67em;
       position: relative;
-      border: 0.115rem solid #fff;
+      // border: 0.115rem solid #fff;
       .figure {
         width: inherit;
         display: block;
@@ -130,24 +143,6 @@ section.one {
         background-position-x: center;
         margin-left: -2.2em;
         background-image: url(../../public/images/NuraddinovA.png);
-      }
-    }
-  }
-  .text.bottom {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    ul {
-      line-height: 1.5;
-      display: flex;
-      justify-content: space-between;
-      color: #ccf381;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      li {
-        width: calc(50% - 1.731em);
       }
     }
   }
@@ -241,11 +236,19 @@ section.four {
         color: #3d155f;
       }
       a {
-        color: #4831d4;
-        width: 100%;
-        border: 1px solid currentColor;
-        justify-content: center;
         width: 70%;
+        border: 1px solid #4831d4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #4831d4;
+      }
+      a:hover {
+        color: #fff;
+        background-color: #4831d4;
+        svg {
+          fill: #fff;
+        }
       }
     }
     .box.one {
@@ -291,23 +294,7 @@ section.five {
       // width: 60%;
       line-height: 1.5;
       font-size: 1.15em;
-      input {
-        border: none;
-        outline: none;
-        padding: 0.6em;
-        padding-left: 0;
-        position: relative;
-        color: currentColor;
-        background: transparent;
-        border-bottom: 1px solid currentColor;
-        position: relative;
-      }
-      ::placeholder {
-        color: rgba(61, 21, 95, 0.5);
-      }
-      input:focus::placeholder {
-        color: transparent;
-      }
+      // color: rgba(61, 21, 95, 0.5);
       span {
         width: 100%;
         display: flex;
@@ -317,8 +304,10 @@ section.five {
         .name {
           width: 45%;
           color: rgba(61, 21, 95, 0.5);
+
           input {
             width: 100%;
+            // color: currentColor;
           }
         }
         .email {
@@ -339,9 +328,30 @@ section.five {
           width: 100%;
         }
       }
-      input:focus {
+      label {
+        input {
+          border: 0;
+          background: transparent;
+          border-bottom: 1px solid currentColor;
+          outline-color: transparent;
+          padding: 0.6em;
+          padding-left: 0;
+          color: currentColor;
+        }
+        input:focus {
+          outline: none;
+        }
+      }
+      label:focus-within {
         color: #4831d4;
       }
+      ::placeholder {
+        color: #3d155f;
+      }
+      input:focus::placeholder {
+        color: transparent;
+      }
+
       button {
         align-items: center;
         display: flex;
@@ -353,6 +363,13 @@ section.five {
         padding: 1rem;
         color: #4831d4;
         background-color: #f9f9f9;
+      }
+      button:hover {
+        background-color: #4831d4;
+        color: #f9f9f9;
+        svg {
+          fill: #f9f9f9;
+        }
       }
     }
   }
@@ -409,28 +426,46 @@ section.footer {
   }
 }
 @media (max-width: 580px) {
-  header{
-    .sidebarIcon{
-      svg{
+  header {
+    .sidebarIcon {
+      svg {
         fill: #ccf381;
       }
     }
   }
   section.one {
-    background: linear-gradient(180deg, #4831d4 80%, #ccf381 20%);
+    background: linear-gradient(180deg, #4831d4 55%, #ccf381 45%);
+    width: 100%;
+    height: 100vh;
     .boxes {
       padding: 0 15vw;
-      margin-top: calc(11.12em + 6em);
+      // margin-top: calc(11.12em + 6em);
+      display: block;
       article {
+        padding: 10rem 0;
         .box.one {
           .heading {
             font-size: 5em;
           }
+          .bolid {
+            font-size: 1.2rem;
+          }
+          ul {
+            // padding-top: 5rem;
+            font-size: 1rem;
+            width: 100%;
+            li {
+              width: 40%;
+            }
+          }
         }
       }
-    }
-    .text.bottom {
-      padding: 0 15vw;
+      .box.two {
+        margin: 0 auto;
+        border: 0.115rem solid #fff;
+
+        // padding: 5rem 0;
+      }
     }
   }
   section.two {
@@ -497,6 +532,9 @@ section.footer {
   section.one {
     .boxes {
       padding: 0 7rem;
+      h1 {
+        width: 30vw;
+      }
     }
   }
   section.two {
@@ -518,9 +556,9 @@ section.footer {
   }
 }
 @media (min-width: 581px) {
-  header{
-    .sidebarIcon{
-      svg{
+  header {
+    .sidebarIcon {
+      svg {
         fill: #4831d4;
       }
     }
@@ -538,12 +576,6 @@ section.footer {
             font-size: 1.3em;
           }
         }
-      }
-    }
-    .text.bottom {
-      padding: 0 7rem;
-      ul {
-        width: 65%;
       }
     }
   }
@@ -602,9 +634,6 @@ section.footer {
         }
       }
     }
-    .text.bottom {
-      font-size: 1.2em;
-    }
   }
   section.two {
     display: block;
@@ -622,12 +651,12 @@ section.footer {
   section.three {
     padding: 10rem 0;
     background-color: #b5e2e5;
-    
+
     // background: linear-gradient(10deg, #b5e2e5 60%, #4831d4 40%);
     .boxes {
       display: block;
       article {
-        h1{
+        h1 {
           color: #4831d4;
         }
         p {
@@ -652,9 +681,6 @@ section.footer {
     max-width: 1500px;
   }
   .section.two {
-    max-width: 1500px;
-  }
-  .text.bottom {
     max-width: 1500px;
   }
 }
@@ -683,15 +709,6 @@ section.footer {
       }
       .box.two {
         margin-right: calc(6em + 4em);
-      }
-    }
-    .text.bottom {
-      padding: 0 10rem;
-      // margin-top: auto;
-      padding-right: 6em;
-      ul {
-        width: 41%;
-        font-size: 0.965em;
       }
     }
   }
