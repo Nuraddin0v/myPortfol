@@ -1,10 +1,13 @@
 /** @format */
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./Section.scss";
 import { toast } from "react-toastify";
 // import { useEffect } from "react";
 const Section = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
@@ -18,6 +21,9 @@ const Section = () => {
       .then(
         (result) => {
           toast.success("Malumot yuborildi!");
+          name.target.value = "";
+          email.target.value = "";
+          message.target.value = "";
           // console.log(result);
         },
         (error) => {
@@ -161,6 +167,7 @@ const Section = () => {
                     name="user_name"
                     type="text"
                     placeholder="Enter your name"
+                    onChange={(e) => setName(e)}
                   />
                 </label>
                 <br />
@@ -180,6 +187,7 @@ const Section = () => {
                     name="user_email"
                     type="email"
                     placeholder="Enter your email address"
+                    onChange={(e) => setEmail(e)}
                   />
                 </label>
               </div>
@@ -199,6 +207,7 @@ const Section = () => {
                   name="message"
                   type="text"
                   placeholder="Information about yourself"
+                  onChange={(e) => setMessage(e)}
                 />
               </label>
             </div>
