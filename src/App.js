@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Resume from "./components/Resume";
 import Shelf from "./components/Shelf";
+import { ToastContainer } from "react-toastify";
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -17,6 +18,7 @@ import Shelf from "./components/Shelf";
 function App() {
   return (
     <div className="App">
+      <ToastContainer />
       <BrowserRouter>
         <Navbar />
         <Routes>
